@@ -30,6 +30,7 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* ================= HEADER ================= */
     header {
       position: sticky;
       top: 0;
@@ -41,157 +42,148 @@
     .nav {
       max-width: 1100px;
       margin: auto;
-      padding: 0.9rem 1.2rem;
+      padding: 0.8rem 1.2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
     }
 
-    /* BIG, CENTERED LOGO */
-    .logo-centered {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      min-width: 140px;
-    }
-
-    .logo-centered img {
-      height: 110px;              /* Bigger on desktop */
-      width: auto;
-      filter: drop-shadow(0 0 18px rgba(56,189,248,0.55));
-      transition: transform 0.25s ease;
-    }
-
-    .logo-centered img:hover {
-      transform: scale(1.04);
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
     .nav-links {
       display: flex;
-      justify-content: flex-end;
-      gap: 1.3rem;
+      gap: 1.2rem;
       font-size: 0.85rem;
       color: var(--muted);
-      flex: 1;
     }
 
     .nav-links a:hover { color: var(--accent); }
 
+    /* ================= MAIN ================= */
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 2.8rem 1.2rem 3.2rem;
+      padding: 3rem 1.2rem 3.5rem;
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
     .hero {
-      background: linear-gradient(135deg, rgba(56,189,248,0.10), rgba(15,23,42,0.96));
+      text-align: center;
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(15,23,42,0.96));
       border: 1px solid var(--border);
-      border-radius: 1.6rem;
-      padding: 2.8rem;
-      margin-bottom: 2.6rem;
+      border-radius: 1.8rem;
+      padding: 3.2rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-logo img {
+      height: 160px;
+      width: auto;
+      margin-bottom: 1.4rem;
+      filter: drop-shadow(0 0 24px rgba(56,189,248,0.55));
     }
 
     .badge {
       display: inline-block;
-      padding: 0.32rem 0.8rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
       font-size: 0.8rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 2.7rem);
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
 
     .hero p {
-      max-width: 48rem;
+      max-width: 50rem;
+      margin: 0 auto 1rem;
       color: var(--muted);
-      font-size: 0.98rem;
-      margin-bottom: 0.9rem;
+      font-size: 1rem;
     }
 
     .btn-row {
       display: flex;
+      justify-content: center;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-top: 1.4rem;
+      margin-top: 1.6rem;
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.6rem;
+      padding: 0.8rem 1.8rem;
       border-radius: 999px;
       background: var(--accent);
       color: #020617;
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
     }
 
     .btn-secondary {
-      padding: 0.7rem 1.4rem;
+      padding: 0.75rem 1.6rem;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.03);
-      font-size: 0.9rem;
-      color: var(--text);
+      font-size: 0.95rem;
     }
 
-    section { margin-top: 2.6rem; }
+    section { margin-top: 3rem; }
 
     h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
     }
 
     .section-text {
-      max-width: 54rem;
+      max-width: 56rem;
       color: var(--muted);
-      font-size: 0.96rem;
-      margin-bottom: 1.3rem;
+      font-size: 0.97rem;
+      margin-bottom: 1.4rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.1rem;
+      gap: 1.2rem;
     }
 
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 1.1rem;
-      padding: 1.3rem;
-      font-size: 0.92rem;
+      border-radius: 1.2rem;
+      padding: 1.4rem;
+      font-size: 0.95rem;
     }
 
     .card h3 {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
       margin-bottom: 0.45rem;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 0.92rem;
     }
 
     .list {
       margin-top: 0.6rem;
       padding-left: 1.1rem;
       color: var(--muted);
-      font-size: 0.92rem;
     }
 
     .callout {
-      margin-top: 1.4rem;
-      padding: 1.2rem;
-      border-radius: 1.1rem;
+      margin-top: 1.6rem;
+      padding: 1.4rem;
+      border-radius: 1.2rem;
       border: 1px solid rgba(56,189,248,0.35);
       background: rgba(56,189,248,0.08);
       font-size: 0.95rem;
@@ -203,31 +195,14 @@
       text-align: center;
       font-size: 0.75rem;
       color: var(--muted);
-      margin-top: 3rem;
-      background: rgba(2,6,23,0.55);
+      margin-top: 3.5rem;
     }
 
-    /* Mobile */
+    /* ================= MOBILE ================= */
     @media (max-width: 720px) {
-      .nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .logo-centered img {
-        height: 90px; /* Bigger mobile logo too */
-      }
-
-      .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .hero {
-        padding: 2.2rem 1.6rem;
-      }
+      .nav-links { display: none; }
+      .hero-logo img { height: 120px; }
+      .hero { padding: 2.6rem 1.6rem; }
     }
   </style>
 </head>
@@ -236,11 +211,8 @@
 
 <header>
   <div class="nav">
-    <div class="logo-centered">
-      <img src="logo.png" alt="MindFlux Diagnostics logo">
-    </div>
-
-    <nav class="nav-links" aria-label="Primary navigation">
+    <div class="brand">MindFlux Diagnostics</div>
+    <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#benefits">Why remote EEG?</a>
       <a href="#expertise">Expertise</a>
@@ -252,6 +224,10 @@
 <main>
 
   <section class="hero">
+    <div class="hero-logo">
+      <img src="logo.png" alt="MindFlux Diagnostics logo">
+    </div>
+
     <div class="badge">Remote EEG Interpretation</div>
 
     <h1>High-quality EEG interpretation, delivered remotely.</h1>
@@ -280,7 +256,7 @@
       </a>
     </div>
 
-    <p style="margin-top:0.7rem; color:#9ca3af; font-size:0.85rem;">
+    <p style="margin-top:0.8rem; color:#9ca3af; font-size:0.85rem;">
       30-minute introductory call to review EEG volume, coverage needs, and workflow.
     </p>
   </section>
@@ -294,25 +270,17 @@
     <div class="grid">
       <div class="card">
         <h3>Neonatal & pediatric EEG</h3>
-        <p>
-          Age-appropriate EEG interpretation for NICU and pediatric settings, including seizure detection
-          and encephalopathy assessment.
-        </p>
+        <p>Age-appropriate EEG interpretation for NICU and pediatric settings.</p>
       </div>
 
       <div class="card">
         <h3>Adult routine & continuous EEG</h3>
-        <p>
-          Routine, prolonged, and continuous EEG interpretation for adult inpatient and outpatient care,
-          including ICU monitoring.
-        </p>
+        <p>Routine, prolonged, and continuous EEG interpretation including ICU monitoring.</p>
       </div>
 
       <div class="card">
         <h3>Operational support</h3>
-        <p>
-          Clear, structured, EMR-ready reporting with defined communication pathways for urgent studies.
-        </p>
+        <p>Clear, EMR-ready reporting with defined communication pathways.</p>
       </div>
     </div>
   </section>
@@ -320,56 +288,13 @@
   <section id="benefits">
     <h2>Why remote EEG matters</h2>
     <p class="section-text">
-      Seizures and epileptiform activity are common in hospitalized and critically ill patients, and many
-      events are clinically subtle or nonconvulsive. EEG monitoring helps teams detect seizures, characterize
-      encephalopathy, and guide timely treatment decisions.
+      EEG monitoring improves seizure detection, encephalopathy characterization, and supports timely
+      inpatient decision making—especially when events are nonconvulsive or clinically subtle.
     </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Supports higher-level inpatient care</h3>
-        <p>
-          Remote EEG interpretation expands access to subspecialty expertise, enabling hospitals to deliver
-          higher-level neurological care even when local staffing is limited.
-        </p>
-        <ul class="list">
-          <li>Improved access to epilepsy expertise</li>
-          <li>Consistent coverage across shifts</li>
-          <li>Standardized, high-quality reporting</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Helps prevent unnecessary transfers</h3>
-        <p>
-          By supporting advanced EEG interpretation locally, hospitals can often avoid transfers driven
-          primarily by limited EEG availability, keeping patients closer to home.
-        </p>
-        <ul class="list">
-          <li>Reduced transfer delays and costs</li>
-          <li>Improved continuity for patients and families</li>
-          <li>Stronger ICU and NICU decision support</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Clinically actionable results</h3>
-        <p>
-          Our reports emphasize clarity, clinical correlation, and relevance to management—supporting
-          medication decisions and escalation when needed.
-        </p>
-        <ul class="list">
-          <li>Seizure and status epilepticus detection</li>
-          <li>Encephalopathy characterization</li>
-          <li>Treatment guidance aligned with context</li>
-        </ul>
-      </div>
-    </div>
-
     <div class="callout">
-      <strong>Bottom line:</strong> Remote EEG interpretation strengthens local hospital capability,
-      improves access to subspecialty care, and can help prevent transfers that are driven primarily by
-      EEG coverage limitations.
+      <strong>Bottom line:</strong> Remote EEG interpretation expands access to subspecialty care, supports
+      higher-level hospital capability, and helps prevent transfers driven primarily by EEG availability.
     </div>
   </section>
 
@@ -379,31 +304,6 @@
       All EEG studies are interpreted exclusively by
       <strong>epilepsy board-certified epileptologists at top U.S. academic institutions</strong>.
     </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Subspecialty training</h3>
-        <p>
-          Fellowship-trained epileptologists with extensive experience in academic epilepsy centers.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Across the lifespan</h3>
-        <p>
-          Expertise in neonatal, pediatric, and adult EEG interpretation, including continuous EEG
-          in ICU environments.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Workflow-friendly approach</h3>
-        <p>
-          Clear communication, consistent formatting, and reports designed to integrate seamlessly
-          into your clinical workflow.
-        </p>
-      </div>
-    </div>
   </section>
 
   <section id="contact">
@@ -412,16 +312,8 @@
       For EEG coverage inquiries, please email us or schedule a brief introductory call.
     </p>
 
-    <p>
-      <strong>Email:</strong>
+    <p><strong>Email:</strong>
       <a href="mailto:contact@mindfluxdiagnostics.com">contact@mindfluxdiagnostics.com</a>
-    </p>
-
-    <p style="margin-top:0.6rem;">
-      <strong>Schedule:</strong>
-      <a href="https://calendly.com/erkam342/30min" target="_blank" rel="noopener">
-        Book a 30-minute introductory call
-      </a>
     </p>
   </section>
 
