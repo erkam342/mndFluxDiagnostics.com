@@ -1,208 +1,298 @@
-<style>
-:root {
-  --bg-main: #ffffff;
-  --bg-card: #f8fafc;
-  --border: #e5e7eb;
-  --text: #0f172a;
-  --muted: #475569;
-  --accent: #2563eb;
-  --accent-soft: rgba(37,99,235,0.10);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+    /* Your CSS code here */
+    :root {
+      --bg-main: #ffffff;
+      --bg-card: #f8fafc;
+      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-soft: rgba(37,99,235,0.10);
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text);
+      line-height: 1.65;
+    }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg-main);
-  color: var(--text);
-  line-height: 1.65;
+    a { color: inherit; text-decoration: none; }
 
-  a { color: inherit; text-decoration: none; }
+    /* FINAL OVERRIDE: force light background */
+    html, body { background: #ffffff !important; color: #0f172a !important; }
+    header { background: rgba(255,255,255,0.96) !important; }
+    .card { background: #f8fafc !important; }
+    
+    /* ================= HEADER ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
 
-/* FINAL OVERRIDE: force light background */
-html, body { background: #ffffff !important; color: #0f172a !important; }
-header { background: rgba(255,255,255,0.96) !important; }
-.card { background: #f8fafc !important; }
-  /* ================= HEADER ================= */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(255,255,255,0.96);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(6px);
-  }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .nav {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0.9rem 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text);
+    }
 
-  .brand {
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: var(--text);
-  }
+    .nav-links {
+      display: flex;
+      gap: 1.3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
-  .nav-links {
-    display: flex;
-    gap: 1.3rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
+    .nav-links a:hover { color: var(--accent); }
 
-  .nav-links a:hover { color: var(--accent); }
+    /* ================= MAIN ================= */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3.5rem 1.2rem 4rem;
+    }
 
-  /* ================= MAIN ================= */
-  main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 3.5rem 1.2rem 4rem;
-  }
+    /* ================= HERO ================= */
+    .hero {
+      text-align: center;
+      background: linear-gradient(
+        180deg,
+        rgba(37,99,235,0.05),
+        #ffffff
+      );
+      border: 1px solid var(--border);
+      border-radius: 1.6rem;
+      padding: 3.5rem 2.2rem;
+      margin-bottom: 3.2rem;
+    }
 
-  /* ================= HERO ================= */
-  .hero {
-    text-align: center;
-    background: linear-gradient(
-      180deg,
-      rgba(37,99,235,0.05),
-      #ffffff
-    );
-    border: 1px solid var(--border);
-    border-radius: 1.6rem;
-    padding: 3.5rem 2.2rem;
-    margin-bottom: 3.2rem;
-  }
+    .hero-logo img {
+      height: 150px;
+      width: auto;
+      margin-bottom: 1.6rem;
+    }
 
-  .hero-logo img {
-    height: 150px;
-    width: auto;
-    margin-bottom: 1.6rem;
-  }
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 1.3rem;
+      font-weight: 600;
+    }
 
-  .badge {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.8rem;
-    margin-bottom: 1.3rem;
-    font-weight: 600;
-  }
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
 
-  .hero h1 {
-    font-size: clamp(2.1rem, 4vw, 2.9rem);
-    line-height: 1.25;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.02em;
-  }
+    .hero p {
+      max-width: 52rem;
+      margin: 0 auto 1.1rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
 
-  .hero p {
-    max-width: 52rem;
-    margin: 0 auto 1.1rem;
-    color: var(--muted);
-    font-size: 1.02rem;
-  }
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+    }
 
-  .btn-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.8rem;
-  }
+    .btn {
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.25);
+    }
 
-  .btn {
-    padding: 0.85rem 2rem;
-    border-radius: 999px;
-    background: var(--accent);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    box-shadow: 0 6px 20px rgba(37,99,235,0.25);
-  }
+    .btn:hover { opacity: 0.95; }
 
-  .btn:hover { opacity: 0.95; }
+    .btn-secondary {
+      padding: 0.8rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
 
-  .btn-secondary {
-    padding: 0.8rem 1.7rem;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: #ffffff;
-    font-size: 0.95rem;
-    color: var(--text);
-  }
+    section { margin-top: 3.4rem; }
 
-  section { margin-top: 3.4rem; }
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
 
-  h2 {
-    font-size: 1.45rem;
-    margin-bottom: 0.8rem;
-    letter-spacing: -0.01em;
-  }
+    .section-text {
+      max-width: 56rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.6rem;
+    }
 
-  .section-text {
-    max-width: 56rem;
-    color: var(--muted);
-    font-size: 0.98rem;
-    margin-bottom: 1.6rem;
-  }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.4rem;
-  }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1.3rem;
+      padding: 1.6rem;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+    }
 
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 1.3rem;
-    padding: 1.6rem;
-    font-size: 0.95rem;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.04);
-  }
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
 
-  .card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-  }
+    .card p {
+      color: var(--muted);
+    }
 
-  .card p {
-    color: var(--muted);
-  }
+    .callout {
+      margin-top: 1.8rem;
+      padding: 1.6rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(37,99,235,0.25);
+      background: rgba(37,99,235,0.05);
+      font-size: 0.96rem;
+    }
 
-  .callout {
-    margin-top: 1.8rem;
-    padding: 1.6rem;
-    border-radius: 1.2rem;
-    border: 1px solid rgba(37,99,235,0.25);
-    background: rgba(37,99,235,0.05);
-    font-size: 0.96rem;
-  }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4rem;
+    }
 
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 1.8rem;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-top: 4rem;
-  }
+    /* ================= MOBILE ================= */
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .hero-logo img { height: 115px; }
+      .hero { padding: 2.7rem 1.6rem; }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="brand">YOURBRAND</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
 
-  /* ================= MOBILE ================= */
-  @media (max-width: 720px) {
-    .nav-links { display: none; }
-    .hero-logo img { height: 115px; }
-    .hero { padding: 2.7rem 1.6rem; }
-  }
-</style>
+    <main>
+        <section class="hero">
+            <div class="hero-logo">
+                <!-- Replace with your logo -->
+                <div style="height: 150px; background: var(--accent-soft); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: bold; margin: 0 auto 1.6rem;">
+                    YOUR LOGO
+                </div>
+            </div>
+            <div class="badge">NEW RELEASE</div>
+            <h1>Welcome to Your Amazing Website</h1>
+            <p>A clean, modern website template with beautiful design elements and responsive layout that works perfectly on all devices.</p>
+            <p>Customize this template with your own content, images, and branding to create something unique.</p>
+            <div class="btn-row">
+                <a href="#" class="btn">Get Started</a>
+                <a href="#" class="btn-secondary">Learn More</a>
+            </div>
+        </section>
 
+        <section>
+            <h2>Key Features</h2>
+            <p class="section-text">Discover what makes our platform stand out from the rest with these powerful features.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Feature One</h3>
+                    <p>A detailed description of your first feature goes here. Explain the benefits clearly.</p>
+                </div>
+                <div class="card">
+                    <h3>Feature Two</h3>
+                    <p>Another feature description with compelling reasons why users should care.</p>
+                </div>
+                <div class="card">
+                    <h3>Feature Three</h3>
+                    <p>The third important feature that solves a specific problem for your audience.</p>
+                </div>
+                <div class="card">
+                    <h3>Feature Four</h3>
+                    <p>A fourth feature that rounds out your offering and provides complete value.</p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <strong>Special Note:</strong> This is a callout section for important announcements or highlights. You can customize this text.
+            </div>
+        </section>
+
+        <section>
+            <h2>Additional Information</h2>
+            <p class="section-text">More details about your product, service, or company can go in this section. Expand on your value proposition here.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Benefit One</h3>
+                    <p>Explain how this benefit helps your customers achieve their goals.</p>
+                </div>
+                <div class="card">
+                    <h3>Benefit Two</h3>
+                    <p>Another key benefit that addresses customer pain points.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>© 2023 Your Company Name. All rights reserved.</div>
+        <div style="margin-top: 0.5rem;">Customize this footer with your own links and information.</div>
+    </footer>
+</body>
+</html>
